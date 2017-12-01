@@ -8,7 +8,7 @@ import javax.inject.Inject;
 
 import views.html.*;
 
-import models.*;
+import models.Evento;
 import java.util.List;
 import java.util.Date;
 /**
@@ -20,8 +20,7 @@ public class HomeController extends Controller {
     @Inject
     FormFactory formFactory;
 
-    @Inject
-    Evento evento;
+   
 
     
     public Result index() {
@@ -40,7 +39,7 @@ public class HomeController extends Controller {
     }
 
     public Result listaTudo(){
-        List<Evento> listDeEventos = evento.find.all();
+        List<Evento> listDeEventos = Evento.find.all();
         
         return ok(listagem.render(listDeEventos));
 
